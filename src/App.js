@@ -1,7 +1,10 @@
+// @flow
 import React from "react";
 import "./App.css";
 
 function App() {
+  const [name, setName] = React.useState<string>("John Doe");
+
   return (
     <div className="App">
       <header className="App-header">
@@ -11,8 +14,11 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          {name}
         </a>
+        <button type="button" onClick={() => setName("Foo")}>
+          Change Name
+        </button>
       </header>
     </div>
   );

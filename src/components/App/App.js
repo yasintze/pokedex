@@ -1,28 +1,10 @@
 // @flow
 import React from "react";
-import { useQuery } from "@apollo/react-hooks";
-import gql from "graphql-tag";
+import { useQuery } from "react-apollo";
 
 import uniqueId from "../../utils/helpers/unique";
+import { GET_POKEMON_INFO } from "../../queries";
 import "./App.css";
-
-// Get all pokemons data from graphql
-const GET_POKEMON_INFO = gql`
-  {
-    pokemons(first: 9999) {
-      id
-      number
-      name
-      image
-      evolutions {
-        id
-        number
-        name
-        image
-      }
-    }
-  }
-`;
 
 function App() {
   const { data, loading, error } = useQuery(GET_POKEMON_INFO);

@@ -5,6 +5,15 @@ import "./App.css";
 function App() {
   const [name, setName] = React.useState<string>("John Doe");
 
+  React.useEffect(() => {
+    const element = document.getElementById("initLoader");
+    window.onload = () => {
+      if (element) {
+        element.remove();
+      }
+    };
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">

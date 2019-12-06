@@ -1,5 +1,6 @@
 // @flow
 import React from "react";
+import { Link } from "@reach/router";
 
 import uniqueId from "../../utils/helpers/unique";
 import "./PokemonList.css";
@@ -36,7 +37,9 @@ const PokemonList = (props: Props) => {
               <p>{number}</p>
               <img src={image} alt={name} />
               <div className="card-body">
-                <h3>{name}</h3>
+                <Link to={`detail/${id}`}>
+                  <h3>{name}</h3>
+                </Link>
                 <p>
                   {evolutions && evolutions.length !== 0 && (
                     <span>

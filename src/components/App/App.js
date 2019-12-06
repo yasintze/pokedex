@@ -1,17 +1,11 @@
 // @flow
 import React from "react";
-import { useQuery } from "react-apollo";
 import Container from "@material-ui/core/Container";
 
-import { GET_POKEMON_INFO } from "../../queries";
-import PokemonList from "../PokemonList";
+import Routes from "../../routes";
 import "./App.css";
 
 const App = () => {
-  const { data, loading, error } = useQuery(GET_POKEMON_INFO);
-
-  // console.log(error);
-
   React.useEffect(() => {
     const element = document.getElementById("initLoader");
     window.onload = () => {
@@ -21,16 +15,12 @@ const App = () => {
     };
   }, []);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error...</p>;
-
   return (
-    <Container maxWidth="sm">
-      <div className="App">
-        <h1>{data.pokemons.length}</h1>
-        {data && data.pokemons && <PokemonList data={data.pokemons} />}
-      </div>
-    </Container>
+    <div className="App">
+      <Container maxWidth="sm">
+        <Routes />
+      </Container>
+    </div>
   );
 };
 

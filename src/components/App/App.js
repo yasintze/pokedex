@@ -1,7 +1,7 @@
 // @flow
 import React from "react";
-import Container from "@material-ui/core/Container";
 
+import Template from "../Template";
 import Routes from "../../routes";
 import "./App.css";
 
@@ -17,9 +17,9 @@ const App = () => {
 
   return (
     <div className="App">
-      <Container maxWidth="sm">
+      <Template>
         <Routes />
-      </Container>
+      </Template>
     </div>
   );
 };

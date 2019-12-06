@@ -6,15 +6,9 @@ const GET_POKEMON_INFO = gql`
   {
     pokemons(first: 9999) {
       id
-      number
       name
       image
-      evolutions {
-        id
-        number
-        name
-        image
-      }
+      types
     }
   }
 `;

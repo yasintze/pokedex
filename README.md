@@ -19,8 +19,14 @@ $ yarn install
 $ yarn run start
 ```
 
+### Run Test
+
+```
+$ yarn test
+```
+
 ### Consume API/GraphQL
-https://graphql-pokemon.now.sh/]
+https://graphql-pokemon.now.sh/
 
 ### To-Do
 

@@ -15,9 +15,9 @@ import TableRow from "@material-ui/core/TableRow";
 import Chip from "@material-ui/core/Chip";
 import HomeIcon from "@material-ui/icons/Home";
 
-import uniqueId from "../utils/helpers/unique";
-
 import { GET_POKEMON_BY_ID } from "../queries";
+import uniqueId from "../utils/helpers/unique";
+import Loading from "../components/Loading";
 
 type Props = {
   pokeId: string
@@ -42,7 +42,7 @@ const DetailContainer = (props: Props) => {
   });
   const classes = useStyles();
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loading />;
 
   return (
     <>

@@ -2,6 +2,8 @@
 import React from "react";
 import { Router } from "@reach/router";
 
+import Loading from "../components/Loading/index";
+
 const MainContainer = React.lazy(() => import("../containers/MainContainer"));
 const DetailContainer = React.lazy(() =>
   import("../containers/DetailContainer")
@@ -9,10 +11,6 @@ const DetailContainer = React.lazy(() =>
 const NotFoundContainer = React.lazy(() =>
   import("../containers/NotFoundContainer")
 );
-
-const Loading = () => {
-  return <div>Loading</div>;
-};
 
 const Routes = () => (
   <React.Suspense fallback={<Loading />}>
